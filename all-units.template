@@ -1,0 +1,646 @@
+copyFrom: ROOT:/actions.template
+
+[global_resource_steel]
+displayName: Steel
+displayColor: #7b9095
+[global_resource_oil]
+displayName: Oil
+displayColor: #000000
+[global_resource_tech]
+displayName: Tech Points
+displayColor: #4e82b4
+
+[global_resource_reichmarks]
+displayName: Reichmarks
+displayNameShort: RM
+displayColor: #D3D3D3
+
+[global_resource_gbp]
+displayName: British Pounds
+displayNameShort: £
+displayColor: #90EE90
+[global_resource_lendLease]
+displayName: Lend Lease Power
+displayColor: #7c5295
+
+[global_resource_dollars]
+displayName: US Dollars
+displayNameShort: $
+displayColor: #90EE90
+
+[global_resource_roubles]
+displayName: рубль
+displayNameShort: Roubles
+displayColor: #cca483
+
+[global_resource_lire]
+displayName: Lire
+displayNameShort: Lire
+displayColor: #c2b480
+
+[global_resource_francs]
+displayName: Francs
+displayNameShort: Francs
+displayColor: #c4d4e0
+
+[global_resource_yen]
+displayName: 円
+displayNameShort: ¥
+displayColor: #ffb7c5
+
+[global_resource_markka]
+displayName: markka
+displayNameShort: MK
+displayColor: #D3D3D3
+
+[global_resource_Leu]
+displayName: Leu
+displayNameShort: IEU
+displayColor: #D3D3D3
+
+[resource_torpedo]
+displayName: Torpedo
+hidden: true
+
+[effect_hugeExplosionDeath]
+life: 60
+scaleFrom: 0
+scaleTo: 6
+fadeOut: true
+alpha: 1
+color: #FFFFFF
+image: ROOT:\Assets\explosion.png
+alsoEmitEffects: CUSTOM:hugeRipple
+[effect_hugeRipple]
+life: 40
+scaleFrom: 0
+alpha: 2
+scaleTo: 3
+fadeOut: true
+color: #FFFFFF
+image: ROOT:\Assets\shockwave_large.png
+
+[effect_projectileWaterSmoke]
+priority:veryhigh
+showInFog: true
+stripIndex: effects
+frameIndex: 0
+createWhenOverLand: false
+life: 240
+fadeOut: true
+attachedToUnit: false
+color: #FFFFFF
+fadeInTime:5
+scaleFrom: 2
+scaleTo: 4
+alpha: 1.25
+drawUnderUnits:false
+hSpeed:0.2
+hOffsetRandom:0.15
+atmospheric:true
+dirOffsetRandom:180
+shadow:true
+xOffsetRelativeRandom: 24
+yOffsetRelativeRandom: 24
+xSpeedAbsoluteRandom:0.2
+ySpeedAbsoluteRandom:0.2
+atmospheric: true
+
+[effect_projectileWaterSplash]
+priority:high
+image: ROOT:\Assets\sub_bubbles.png
+createWhenOverLand: false
+life: 120
+fadeOut: true
+attachedToUnit: false
+color: #FFFFFF
+fadeInTime:5
+scaleFrom: 1.5
+scaleTo: 2.5
+alpha: 1
+drawUnderUnits:false
+hSpeed: 0.75
+hOffsetRandom: 0.75
+atmospheric:true
+dirOffsetRandom:180
+physics: true
+physicsGravity: 0.1
+xOffsetRelativeRandom: 16
+yOffsetRelativeRandom: 16
+xSpeedAbsoluteRandom:0.2
+ySpeedAbsoluteRandom:0.2
+atmospheric: true
+
+[effect_artyCrater]
+priority:critical
+image: ROOT:\Assets\crater.png
+createWhenOverLiquid: false
+life: 3600
+fadeOut: true
+scaleFrom: 0.4
+scaleTo: 0.4
+alpha: 1.5
+drawUnderUnits:true
+dirOffsetRandom:180
+
+[effect_trail]
+color:#ff6000
+createWhenZoomedOut: false
+priority:low
+xOffsetRelative: 0
+yOffsetRelative: 0
+ySpeedRelative: 4
+image: ROOT:/Assets/projectile.png
+life: 30
+fadeOut: true
+attachedToUnit: false
+scaleFrom: 0.5
+scaleTo: 0.3
+alpha: 1
+drawUnderUnits:true
+
+[effect_dustGround]
+priority:high
+image: ROOT:/Assets/sub_bubbles.png
+createWhenOverLiquid: false
+life: 120
+fadeOut: true
+attachedToUnit: false
+color: #463126
+fadeInTime:5
+scaleFrom: 1.5
+scaleTo: 2.5
+alpha: 1.25
+drawUnderUnits:false
+hSpeed: 0.75
+hOffsetRandom: 0.75
+atmospheric:true
+dirOffsetRandom:180
+physics: true
+physicsGravity: 0.1
+xOffsetRelativeRandom: 16
+yOffsetRelativeRandom: 16
+xSpeedAbsoluteRandom:0.2
+ySpeedAbsoluteRandom:0.2
+atmospheric: true
+[effect_dustSmoke]
+priority:veryhigh
+stripIndex: effects
+frameIndex: 0
+createWhenOverLiquid: false
+life: 240
+fadeOut: true
+attachedToUnit: false
+color: #6D5448
+fadeInTime:5
+scaleFrom: 2
+scaleTo: 4
+alpha: 1.25
+drawUnderUnits:false
+hSpeed:0.2
+hOffsetRandom:0.15
+atmospheric:true
+dirOffsetRandom:180
+shadow:true
+xOffsetRelativeRandom: 24
+yOffsetRelativeRandom: 24
+xSpeedAbsoluteRandom:0.2
+ySpeedAbsoluteRandom:0.2
+atmospheric: true
+
+[effect_turretPop]
+attachedToUnit: false
+life: 1200
+xOffsetRelative: 0
+yOffsetRelative: 0
+physics: true
+xSpeedRelativeRandom: 1.5
+
+ySpeedRelativeRandom: 1.5
+hSpeed: 5
+image:       ROOT:/Assets/egTurretFull.png
+imageShadow: ROOT:/Assets/egTurretFullShadow.png
+scaleFrom: 0.62
+scaleTo: 0.62
+dirOffsetRandom: 180
+dirSpeed: 6
+
+[effect_puffRed]
+alsoEmitEffects: CUSTOM:puffOrange
+stripIndex: effects
+frameIndex: 0
+createWhenOverLiquid: false
+liveAfterAttachedDies: true
+life: 250
+fadeOut: true
+attachedToUnit: false
+color: #FF0000
+scaleFrom: 1
+scaleTo: 6
+alpha: 1
+drawUnderUnits:false
+#atmospheric:true
+physics: false
+xSpeedRelativeRandom: 0.1
+ySpeedRelativeRandom: 0.1
+shadow:true
+[effect_puffOrange]
+stripIndex: effects
+frameIndex: 0
+createWhenOverLiquid: false
+liveAfterAttachedDies: true
+life: 250
+fadeOut: true
+attachedToUnit: false
+color: #ff6600
+scaleFrom: 1
+scaleTo: 4
+alpha: 1
+drawUnderUnits:false
+#atmospheric:true
+physics: false
+xSpeedRelativeRandom: 0.1
+ySpeedRelativeRandom: 0.1
+shadow:true
+delayedStartTimer: 17
+[effect_puff]
+stripIndex: effects
+frameIndex: 0
+createWhenOverLiquid: false
+liveAfterAttachedDies: true
+life: 100
+fadeOut: true
+attachedToUnit: false
+color: #000000
+fadeInTime:10
+scaleFrom: 0.2
+scaleTo: 1.5
+alpha: 0.7
+drawUnderUnits:false
+hSpeed: 1
+shadow:true
+xOffsetRelativeRandom: 0.2
+yOffsetRelativeRandom: 0.2
+
+[effect_shoot]
+image: ROOT:/Assets/shoot.png
+alsoEmitEffects: CUSTOM:muzzle*4, CUSTOM:shoot_2
+life: 22
+fadeOut: true
+scaleTo: 0.6
+scaleFrom: 2
+[effect_shootArty]
+@copyFromSection: effect_shoot
+alsoEmitEffects: CUSTOM:muzzleArty*6, CUSTOM:shoot_2
+[effect_shoot_2]
+life: 12
+stripIndex: effects2
+frameIndex: 3
+fadeOut: true
+color: #FFFF00
+scaleTo: 0.2
+scaleFrom: 1
+xOffsetRelativeRandom: 0.2
+yOffsetRelativeRandom: 0.2
+xSpeedAbsoluteRandom:0.1
+ySpeedAbsoluteRandom:0.1
+[effect_muzzle]
+priority:veryhigh
+stripIndex: effects
+frameIndex: 0
+createWhenOverLiquid: true
+liveAfterAttachedDies: true
+life: 125
+fadeOut: true
+attachedToUnit: false
+color: #9E9E9E
+fadeInTime:10
+scaleFrom: 0.4
+scaleTo: 1
+alpha: 1
+drawUnderUnits:false
+hOffsetRandom:0.4
+dirSpeedRandom: 2
+dirOffsetRandom:24
+ySpeedRelative:-0.15
+hSpeed: 0.1
+shadow:true
+xOffsetRelativeRandom: 0.2
+yOffsetRelativeRandom: 0.2
+xSpeedAbsoluteRandom:0.1
+ySpeedAbsoluteRandom:0.1
+[effect_muzzleArty]
+@copyFromSection: effect_muzzle
+life: 90
+scaleTo: 5
+ySpeedRelative: 0.3
+hSpeed: 0.005
+xSpeedRelativeRandom: 0.3
+ySpeedRelativeRandom: 0.5
+
+[effect_dust]
+attachedToUnit: false
+createWhenOverLiquid: false
+life: 200
+alpha: 0.5
+scaleFrom:1
+scaleTo: 3
+xSpeedRelativeRandom: 0.3
+ySpeedRelativeRandom: 0.3
+hSpeed: 0.1
+image: ROOT:/Assets/dust.png
+priority: high
+drawUnderUnits:false
+atmospheric:true
+[effect_build]
+alwayStartDirAtZero:true
+attachedToUnit: true
+life: 100
+alpha: 0
+hSpeed: 0.2
+priority: high
+drawUnderUnits:false
+alsoPlaySound: ROOT:/Assets/build.ogg
+
+#BULLETS
+[effect_lostShot]
+spawnChance:0.5
+attachedToUnit: false
+life: 60
+ySpeedRelative: 8
+image: ROOT:/Assets/projectile.png
+scaleFrom:0.9
+scaleTo: 0.7
+priority: low
+alpha:2
+[effect_sparks]
+attachedToUnit: false
+life: 150
+scaleFrom:0.7
+scaleTo: 0.5
+physics: true
+xSpeedRelativeRandom: 0.6
+ySpeedRelativeRandom: 0.6
+hSpeed: 1
+image: ROOT:/Assets/spark.png
+priority: low
+[effect_sparks2]
+attachedToUnit: false
+life: 150
+scaleFrom:0.7
+scaleTo: 0.5
+physics: true
+xSpeedRelativeRandom: 1.5
+ySpeedRelativeRandom: 1.5
+hSpeed: 1
+image: ROOT:/Assets/spark.png
+priority: low
+[effect_smoke]
+frameIndex: 0
+stripIndex: smoke_black
+spawnChance: 0.75
+priority: verylow
+createWhenZoomedOut: false
+life: 90
+fadeOut: true
+attachedToUnit: false
+color: #FFFFFF
+fadeInTime:2
+scaleFrom: 0.3
+scaleTo: 0.6
+alpha: 1
+drawUnderUnits:false
+liveAfterAttachedDies: false
+[effect_pyro]
+spawnChance:0.5
+life:60
+alpha:0
+alsoEmitEffects:CUSTOM:sparks*3,CUSTOM:sparks2*3, smoke
+alsoPlaySound: ROOT:/Assets/ricochet.ogg:0.065
+
+[projectile_7.92mm]
+directDamage: 10
+life: 200
+speed: 6
+frame: 1
+image: ROOT:/Assets/bullet.png
+drawSize: 0.7
+tags: 7.92mm, lowCaliberBullet
+explodeEffect: CUSTOM:pyro
+effectOnCreate: CUSTOM:smoke
+mutatorAP_ifUnitWithTags: tank
+mutatorAP_directDamageMultiplier: 0.1
+mutatorCover_ifUnitWithTags: dugout
+mutatorCover_directDamageMultiplier: 0.7
+mutatorConcrete_ifUnitWithTags: bunker
+mutatorConcrete_directDamageMultiplier: 0.3
+mutatorSoft_ifUnitWithTags: infantry
+mutatorSoft_directDamageMultiplier: 1
+[projectile_20mm]
+life:150
+directDamage: 20
+life: 200
+speed: 6
+frame: 1
+image: ROOT:/Assets/bullet.png
+drawSize: 0.8
+tags: cannon
+explodeEffect: CUSTOM:pyro
+effectOnCreate: CUSTOM:smoke
+mutatorAP_ifUnitWithTags: tank
+mutatorAP_directDamageMultiplier: 1.2
+mutatorCover_ifUnitWithTags: dugout
+mutatorCover_directDamageMultiplier: 0.7
+mutatorConcrete_ifUnitWithTags: bunker
+mutatorConcrete_directDamageMultiplier: 0.3
+mutatorSoft_ifUnitWithTags: infantry
+mutatorSoft_directDamageMultiplier: 1
+[projectile_30mm]
+life:150
+directDamage: 30
+life: 200
+speed: 6
+frame: 1
+image: ROOT:/Assets/bullet.png
+drawSize: 0.8
+tags: cannon
+explodeEffect: CUSTOM:pyro
+effectOnCreate: CUSTOM:smoke
+mutatorAP_ifUnitWithTags: tank
+mutatorAP_directDamageMultiplier: 1.5
+mutatorCover_ifUnitWithTags: dugout
+mutatorCover_directDamageMultiplier: 1.5
+mutatorConcrete_ifUnitWithTags: bunker
+mutatorConcrete_directDamageMultiplier: 1.4
+mutatorSoft_ifUnitWithTags: infantry
+mutatorSoft_directDamageMultiplier: 1
+[projectile_40mm]
+life:150
+directDamage: 40
+life: 200
+speed: 6
+frame: 1
+image: ROOT:/Assets/bullet.png
+drawSize: 0.8
+tags: cannon
+explodeEffect: CUSTOM:pyro
+effectOnCreate: CUSTOM:smoke
+mutatorAP_ifUnitWithTags: tank
+mutatorAP_directDamageMultiplier: 2
+mutatorCover_ifUnitWithTags: dugout
+mutatorCover_directDamageMultiplier: 2
+mutatorConcrete_ifUnitWithTags: bunker
+mutatorConcrete_directDamageMultiplier: 2
+mutatorSoft_ifUnitWithTags: infantry
+mutatorSoft_directDamageMultiplier: 1
+[projectile_15cmSfh18]
+areaRadius: 75
+areaDamage: 250
+targetGround: true
+targetGroundSpread: 45
+friendlyFire: true
+life: 400
+speed: 8
+frame: 5
+drawSize: 0.4
+largeHitEffect: true
+trailEffectRate: 0.1
+trailEffect: CUSTOM:trail
+
+initialUnguidedSpeedHeight: 3
+gravity:0.18
+
+mutatorInfantry_ifUnitWithTags: infantry
+mutatorInfantry_areaDamageMultiplier: 0.2
+mutatorInfantryMG_ifUnitWithTags: machinegun
+mutatorInfantryMG_areaDamageMultiplier: 5
+mutatorBuilding_ifUnitWithTags: building
+mutatorBuilding_areaDamageMultiplier: 1.5
+mutatorConcrete_ifUnitWithTags: bunker
+mutatorConcrete_areaDamageMultiplier: 0.75
+mutatorAP_ifUnitWithTags: tank
+mutatorAP_areaDamageMultiplier: 0.5
+mutatorArty_ifUnitWithTags: artillery
+mutatorArty_areaDamageMultiplier: 0.3
+explodeEffect: CUSTOM:dustGround, CUSTOM:dustSmoke, CUSTOM:artyCrater
+mutatorBB_ifUnitWithTags: battleship
+mutatorBB_areaDamageMultiplier: 3.5
+mutatorCA_ifUnitWithTags: heavyCruiser
+mutatorCA_areaDamageMultiplier: 4
+mutatorCL_ifUnitWithTags: lightCruiser
+mutatorCL_areaDamageMultiplier: 4
+mutatorDD_ifUnitWithTags: destroyer
+mutatorDD_areaDamageMultiplier: 4.5
+mutatorDC_ifUnitWithTags: frigate
+mutatorDC_areaDamageMultiplier: 5
+mutatorCV_ifUnitWithTags: carrier
+mutatorCV_areaDamageMultiplier: 10
+
+[projectile_navalShell]
+life: 500
+speed: 7
+friendlyFire: true
+largeHitEffect: false
+frame: 2
+targetGround: true
+areaDamage: 50
+areaRadius: 65
+targetGroundSpread: 45
+mutatorNavalCombat_ifUnitWithTags: ass
+mutatorNavalCombat_areaDamageMultiplier: 1
+mutatorBB_ifUnitWithTags: battleship
+mutatorBB_areaDamageMultiplier: 1
+mutatorCA_ifUnitWithTags: heavyCruiser
+mutatorCA_areaDamageMultiplier: 1
+mutatorCL_ifUnitWithTags: lightCruiser
+mutatorCL_areaDamageMultiplier: 1
+mutatorDD_ifUnitWithTags: destroyer
+mutatorDD_areaDamageMultiplier: 1
+mutatorDC_ifUnitWithTags: frigate
+mutatorDC_areaDamageMultiplier: 1
+mutatorCV_ifUnitWithTags: carrier
+mutatorCV_areaDamageMultiplier: 1
+mutatorCollateral_ifUnitWithTags: building
+mutatorCollateral_areaDamageMultiplier: 2.5
+explodeEffect: CUSTOM:dustGround, CUSTOM:dustSmoke, CUSTOM:projectileWaterSmoke, CUSTOM:projectileWaterSplash
+image: ROOT:\Assets\navalShell.png
+drawSize: 0.4
+
+
+
+
+[canBuild_engineering]
+isVisible: if self.tags(includes='engineer')
+name: tankTrap, barbedWireLR, barbedWireUD
+
+#---PLANES---#
+
+[hiddenAction_airportOnePlane]
+autoTrigger: if self.tags(includes='airport') and self.numberOfAttachedUnits(greaterThan=0, lessThan=2, withTag='plane1space')
+temporarilyRemoveTags: airportAvailableTwoSpace
+temporarilyAddTags: airportAvailableOneSpace
+[hiddenAction_airportOnePlane2]
+autoTrigger: if self.tags(includes='airportAvailableOneSpace') and self.numberOfAttachedUnits(greaterThan=1, withTag='plane1space')
+temporarilyRemoveTags: airportAvailableOneSpace
+
+[hiddenAction_airportBigPlane]
+autoTrigger: if self.tags(includes='airportAvailableTwoSpace') and self.numberOfAttachedUnits(greaterThan=0, withTag='plane2space')
+temporarilyRemoveTags: airportAvailableTwoSpace, airportAvailableOneSpace
+
+[hiddenAction_airportAvailabileAll]
+autoTrigger: if self.tags(includes='airport') and self.numberOfAttachedUnits(lessThan=1)
+temporarilyAddTags: airportAvailableOneSpace, airportAvailableTwoSpace
+
+[hiddenAction_planeRestockAmmoOneSpace]
+autoTrigger: if self.energy(empty=true) and self.tags(includes='plane1space') and not self.tags(includes='paratrooperPlane') and not self.tags(includes='carrierPlane') and numberOfUnitsInTeam(withTag='airportAvailableOneSpace', greaterThan=0)
+clearAllWaypoints: true
+addWaypoint_type: loadInto
+addWaypoint_target_nearestUnit_tagged: airportAvailableOneSpace
+addWaypoint_target_nearestUnit_team: own
+
+[hiddenAction_planeRestockAmmoTwoSpace]
+@copyFromSection: hiddenAction_planeRestockAmmoOneSpace
+autoTrigger: if self.energy(empty=true) and not self.tags(includes='paratrooperPlane') and self.tags(includes='plane2space') and numberOfUnitsInTeam(withTag='airportAvailableTwoSpace', greaterThan=0)
+addWaypoint_target_nearestUnit_tagged: airportAvailableTwoSpace
+
+[hiddenAction_planeRestockAmmo2]
+autoTrigger: if self.hasParent(withTag='airport')
+addResources: energy=10
+[hiddenAction_planeRestockAmmo2carrier]
+autoTrigger: if self.hasParent(withTag='carrier')
+addResources: energy=20
+[hiddenAction_aiPlaneKick]
+autoTrigger: if self.isControlledByAI() and self.energy(full=true) and self.tags(includes='plane') and self.hasParent(withTag='airport')
+addWaypoint_type: move
+addWaypoint_position_offsetFromSelf: 100, 0
+
+
+
+[hiddenAction_AI]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='infantry')
+addResources: tech=0
+[hiddenAction_techInfantry]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='infantry')
+addResources: tech=1
+[hiddenAction_techTank]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='tank')
+addResources: tech=2
+[hiddenAction_techArty]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='ordnance')
+addResources: tech=1
+[hiddenAction_techPlane]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='plane')
+addResources: tech=2
+[hiddenAction_techShip]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='ship')
+addResources: tech=3
+[hiddenAction_techDefences]
+autoTriggerOnEvent: killedAnyUnit
+requireConditional: if self.tags(includes='building')
+addResources: tech=1

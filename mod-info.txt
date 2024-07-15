@@ -1,0 +1,10 @@
+[mod]
+title: Blitzkrieg 0.8 modded values version by San
+description: Just edited cash, steel, and oil values.
+thumbnail: thumbnail0.3test.png
+
+tags: ww2
+
+[music]
+sourceFolder:music
+whenUsingUnitsFromThisMod_playExclusively: false
